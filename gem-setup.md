@@ -29,7 +29,7 @@ Application Review → Phone Screen* → Behavioral → Take-Home → Technical 
 
 ### Behavioral Interview
 - **Event name:** Conversation with Charlie Hertz, Co-Founder
-- **Description:** An informal conversation to get to know each other, discuss your experience, and explore what you're looking for in your next role.
+- **Description:** An informal conversation to get to know each other, discuss your experience, and talk about what you're looking for in your next role.
 
 ### Take-Home Exercise
 - **Event name:** Tractorbeam Technical Exercise

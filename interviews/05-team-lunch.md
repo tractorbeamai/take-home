@@ -13,7 +13,7 @@ The team gets a feel for what it's like to work alongside this person day-to-day
 | Time | Section |
 |------|---------|
 | 0-5 min | Arrival, introductions, order food |
-| 5-20 min | Casual conversation — let it flow naturally |
+| 5-20 min | Casual conversation. Let it flow. |
 | 20-40 min | Candidate asks about the team, day-to-day work, culture |
 | 40-55 min | Team members can ask about the candidate's interests, background, working style |
 | 55-60 min | Wrap up, outline remaining steps |
@@ -25,16 +25,10 @@ The team gets a feel for what it's like to work alongside this person day-to-day
 - Fill out your scorecard right after lunch while impressions are fresh.
 
 ## Suggested Conversation Starters (if things stall)
-- "What's a project you've worked on that you genuinely enjoyed, and what made it fun?"
+- "What's a project you've worked on that you enjoyed, and what made it fun?"
 - "What does your ideal workday look like?"
 - "What are you curious about with our team?"
 
-## Scorecard: `Team Lunch`
+## Scorecard
 
-| # | Question | Type | Required |
-|---|----------|------|----------|
-| 1 | Overall recommendation | *(built-in rating)* | Yes |
-| 2 | Overall feedback | *(built-in long answer)* | Yes |
-| 3 | Would you want to work with this person daily? | Single-select: No / Unsure / Yes / Definitely | Yes |
-| 4 | Curiosity & engagement — were they genuinely interested in us? | Rating scale | No |
-| 5 | Anything that stood out (positive or negative)? | Long answer | No |
+Use the default scorecard (Overall recommendation + Overall feedback). No custom questions.
