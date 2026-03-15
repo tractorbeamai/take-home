@@ -3,23 +3,32 @@
 ## Pipeline Overview
 
 ```
-Application Review → Phone Screen* → Behavioral → Take-Home → Technical → Team Lunch → Client Screen → Offer → Hired
+Application Review → Phone Screen* → Behavioral → Take-Home → Technical Screen → Onsite → Client Screen → Offer → Hired
 ```
 
 \*Phone Screen is skipped for referrals.
 
+## Flow
+
+The pipeline has two gates designed to screen out bad candidates before investing more time:
+
+1. **Behavioral (Charlie):** Culture and motivation gate. Not everyone advances.
+2. **Technical Screen (Wade, remote):** Live coding gate. If they can't code, no onsite.
+
+The onsite day is for candidates who've already cleared both gates. It's a "should we hire this person" conversation, not a "can this person code" question. The Carlyle screen with Shane happens after the onsite, only for candidates we're ready to offer pending his sign-off.
+
 ## Milestones, Stages, and Interviews
 
-| Milestone          | Stage              | Interviews                              | Duration                    |
-| ------------------ | ------------------ | --------------------------------------- | --------------------------- |
-| Application Review | Application Review | _(system)_                              | —                           |
-| Screen             | Phone Screen       | Phone Screen                            | 15 min                      |
-| Interview          | Behavioral         | Behavioral Interview                    | 30 min                      |
-| Interview          | Technical          | Take-Home Exercise, Technical Interview | ~2-5 hrs async, 60 min live |
-| Final              | Team Lunch         | Team Lunch                              | 60 min                      |
-| Final              | Client Screen      | Client Screen                           | 30 min                      |
-| Offer              | Offer              | _(system)_                              | —                           |
-| Hired              | Hired              | _(system)_                              | —                           |
+| Milestone          | Stage            | Interviews                           | Duration                         |
+| ------------------ | ---------------- | ------------------------------------ | -------------------------------- |
+| Application Review | Application Review | _(system)_                         | —                                |
+| Screen             | Phone Screen     | Phone Screen                         | 15 min                           |
+| Interview          | Behavioral       | Behavioral Interview                 | 30 min                           |
+| Interview          | Technical        | Take-Home Exercise, Technical Screen | ~2-5 hrs async, 30 min live      |
+| Final              | Onsite           | Onsite Interview, Team Lunch         | 60 min + 60 min                  |
+| Final              | Client Screen    | Client Screen                        | 30 min                           |
+| Offer              | Offer            | _(system)_                           | —                                |
+| Hired              | Hired            | _(system)_                           | —                                |
 
 ## Candidate-Facing Event Names & Descriptions
 
@@ -36,12 +45,17 @@ Application Review → Phone Screen* → Behavioral → Take-Home → Technical 
 ### Take-Home Exercise
 
 - **Event name:** Tractorbeam Technical Exercise
-- **Description:** A take-home project building a small TypeScript/React application with AI features. We respect your time. This is designed to take 2-5 hours, and you'll have 5 days to complete it. We'll send full details and a submission deadline over email.
+- **Description:** A take-home exercise where you'll prepare an existing TypeScript/React codebase for AI-assisted development. We respect your time. This is designed to take 2-5 hours, and you'll have 5 days to complete it. We'll send the repo and full details over email.
 
-### Technical Interview
+### Technical Screen
 
-- **Event name:** Technical Discussion with Wade Fletcher, Co-Founder
-- **Description:** A conversation to walk through your take-home project, discuss your technical thinking, and work through a couple of live problems together. No tricks. We want to understand how you approach problems.
+- **Event name:** Technical Call with Wade Fletcher, Co-Founder
+- **Description:** A 30-minute video call to work through a live coding problem together. No tricks. We want to see how you think through problems.
+
+### Onsite Interview
+
+- **Event name:** Onsite with Wade Fletcher, Co-Founder
+- **Description:** A conversation to walk through your take-home exercise and discuss a systems design problem. We'll dig into your technical thinking and how you approach tradeoffs.
 
 ### Team Lunch
 
