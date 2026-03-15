@@ -8,7 +8,7 @@ We're not asking you to add new features, refactor the app, or do a code review.
 
 ## Starting Points
 
-This repo has three specific issues that Claude Code tends to introduce or reproduce on our real codebase. We're telling you what they are upfront so you can get moving:
+This repo has four specific issues that Claude Code tends to introduce or reproduce on our real codebase. We're telling you what they are upfront so you can get moving:
 
 ### 1. Fake UUIDs
 
@@ -18,13 +18,17 @@ Seed data and test fixtures use placeholder UUIDs like `00000000-0000-0000-0000-
 
 Several components wrap shadcn `<Button>` inside TanStack Router `<Link>`, or the reverse. This produces nested `<a>` and `<button>` elements in the DOM, which is invalid HTML. Screen readers announce these incorrectly, and click handlers can fire twice or not at all depending on the browser. Claude consistently gets this nesting wrong when generating navigation components.
 
-### 3. Manual Drizzle migrations
+### 3. Inconsistent className handling
+
+The codebase has a `cn()` utility (built on `clsx` + `tailwind-merge`) that all shadcn components use for className composition. But route-level code ignores it and uses raw template literal concatenation instead (`` className={`foo ${bar}`} ``). Claude tends to copy whatever pattern it sees nearby, so this inconsistency spreads: components that happen to be near shadcn code get `cn()`, everything else gets string interpolation. The result is that `tailwind-merge` conflict resolution only works in some places.
+
+### 4. Manual Drizzle migrations
 
 Some migration files in `drizzle/` were written by hand instead of generated via `drizzle-kit generate`. The migration journal and snapshots are now out of sync with the actual migration files. When Claude needs to create a schema change, it tends to write migration SQL directly instead of modifying the schema and running the generate command. This causes further drift.
 
 ## Your Task
 
-These three issues are starting points, not the whole exercise. We want to see a holistic attempt to make this repo ready for AI-assisted development. Think about what it takes to ship more correct features faster with AI tools, and what guardrails prevent those tools from degrading the codebase over time.
+These four issues are starting points, not the whole exercise. We want to see a holistic attempt to make this repo ready for AI-assisted development. Think about what it takes to ship more correct features faster with AI tools, and what guardrails prevent those tools from degrading the codebase over time.
 
 Don't add new features to the app. Don't refactor code for its own sake. Focus on the environment, tooling, and configuration that makes AI-assisted development produce better results.
 
@@ -32,19 +36,21 @@ Don't add new features to the app. Don't refactor code for its own sake. Focus o
 
 1. **A working configuration.** Whatever you've changed in the repo. It should work: if we point Claude Code at your version of the repo and ask it to build a feature, your changes should make the output measurably better.
 
-2. **A written analysis (1-2 pages).** Address these three questions:
-   - What issues did you find beyond the three we flagged?
+2. **An analysis of your approach.** A static document — PDF, markdown, slides, whatever you work best in. Address these questions:
+   - What issues did you find beyond the four we flagged?
    - What did you configure and why? Walk us through your decisions.
    - What would you do next with more time?
 
-AI tools are fine to use for the configuration work itself. For the written analysis, your thinking and voice matter more than polish. Avoid AI-writing tells.
+   We're evaluating how you communicate technical decisions and justify their value. At Tractorbeam, engineers explain their work to clients who are technical but not living in the codebase — so the ability to make a clear, grounded case for *why* a change matters is as important as the change itself.
+
+   Using AI to help write this is fine — we use AI for everything. But the document should actually accomplish its goal: a reader who wasn't in your head should come away understanding what you did, why it matters, and what you'd do next. Generic summaries that could describe any project don't do that.
 
 ## Setup
 
 ### Prerequisites
 
 - Node.js 20+
-- pnpm
+- A package manager of your choice (pnpm, npm, yarn, bun)
 
 ### Install and run
 
