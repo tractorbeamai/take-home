@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a small TanStack Start application with Drizzle ORM, shadcn/ui, and a simple AI chat feature powered by Amazon Bedrock. The app works. Your job is to **turn this repo into a software factory**: a codebase where engineers using AI coding tools (Claude Code, Cursor, etc.) ship high-quality features faster, not more AI slop.
+This is a small TanStack Start application with Drizzle ORM and shadcn/ui. The app works. Your job is to **turn this repo into a software factory**: a codebase where engineers using AI coding tools (Claude Code, Cursor, etc.) ship high-quality features faster, not more AI slop.
 
 We're not asking you to add new features, refactor the app, or do a code review. We're asking you to make the *environment* better so that the next 100 features an engineer builds with AI assistance come out right.
 
@@ -60,18 +60,6 @@ pnpm db:push    # set up local SQLite database
 pnpm db:seed    # seed with sample data
 pnpm dev        # start the dev server
 ```
-
-### AI chat feature
-
-The app includes a simple chat interface powered by Amazon Bedrock. We've provided AWS credentials for you:
-
-```
-AWS_ACCESS_KEY_ID=<provided in email>
-AWS_SECRET_ACCESS_KEY=<provided in email>
-AWS_REGION=us-east-1
-```
-
-Add these to a `.env` file in the project root. The chat feature uses Claude 3.5 Sonnet via Bedrock.
 
 ## Submission
 

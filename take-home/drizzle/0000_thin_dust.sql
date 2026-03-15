@@ -1,11 +1,3 @@
-CREATE TABLE `messages` (
-	`id` text PRIMARY KEY NOT NULL,
-	`role` text NOT NULL,
-	`content` text NOT NULL,
-	`conversation_id` text NOT NULL,
-	`created_at` integer NOT NULL
-);
---> statement-breakpoint
 CREATE TABLE `notes` (
 	`id` text PRIMARY KEY NOT NULL,
 	`project_id` text NOT NULL,

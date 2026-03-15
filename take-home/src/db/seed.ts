@@ -9,7 +9,6 @@ function seed() {
   console.log("Seeding database...")
 
   // Clear existing data
-  db.delete(schema.messages).run()
   db.delete(schema.notes).run()
   db.delete(schema.projects).run()
 
@@ -84,29 +83,9 @@ function seed() {
     ])
     .run()
 
-  // Seed some chat messages
-  db.insert(schema.messages)
-    .values([
-      {
-        id: "00000000-0000-0000-0000-000000000020",
-        role: "user",
-        content: "What are the best practices for API rate limiting?",
-        conversationId: "00000000-0000-0000-0000-000000000100",
-      },
-      {
-        id: "00000000-0000-0000-0000-000000000021",
-        role: "assistant",
-        content:
-          "There are several common approaches to API rate limiting:\n\n1. **Token Bucket** — Allows burst traffic while maintaining an average rate\n2. **Fixed Window** — Simple counter reset at fixed intervals\n3. **Sliding Window** — More accurate than fixed window, prevents burst at window boundaries\n\nFor most APIs, token bucket is recommended as it provides a good balance between simplicity and fairness.",
-        conversationId: "00000000-0000-0000-0000-000000000100",
-      },
-    ])
-    .run()
-
   console.log("Seeding complete!")
   console.log("  - 3 projects")
   console.log("  - 5 notes")
-  console.log("  - 2 messages")
 }
 
 seed()

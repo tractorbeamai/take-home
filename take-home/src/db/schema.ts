@@ -25,13 +25,3 @@ export const notes = sqliteTable("notes", {
     .notNull()
     .$defaultFn(() => new Date()),
 })
-
-export const messages = sqliteTable("messages", {
-  id: text("id").primaryKey(),
-  role: text("role").notNull(),
-  content: text("content").notNull(),
-  conversationId: text("conversation_id").notNull(),
-  createdAt: integer("created_at", { mode: "timestamp" })
-    .notNull()
-    .$defaultFn(() => new Date()),
-})

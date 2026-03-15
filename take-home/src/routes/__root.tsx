@@ -48,12 +48,6 @@ function RootComponent() {
             >
               Projects
             </Link>
-            <Link
-              to="/chat"
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
-              Chat
-            </Link>
           </div>
         </div>
       </nav>
