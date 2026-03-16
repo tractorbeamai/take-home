@@ -63,7 +63,7 @@ pnpm dev        # start the dev server
 
 ## Submission
 
-Zip your version of the repo (including your written analysis) and email it back to us within 5 days.
+Zip your completed repo (including your written analysis) and submit it through the link in your Gem candidate portal within 5 days.
 
 ## Time Expectation
 
