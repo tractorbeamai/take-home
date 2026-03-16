@@ -20,4 +20,10 @@ export default defineConfig([
   tanstackRouter,
   includeIgnoreFile(path.resolve(__dirname, ".gitignore")),
   globalIgnores(["src/components/ui/**"]),
+  {
+    files: ["src/routes/**/$*.tsx"],
+    rules: {
+      "unicorn/filename-case": "off",
+    },
+  },
 ]);

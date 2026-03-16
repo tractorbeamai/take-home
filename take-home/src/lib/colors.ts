@@ -18,7 +18,7 @@ const PROJECT_COLORS = [
 ]
 
 export function getProjectColor(id: string): string {
-  const hex = id.replace(/-/g, "").slice(0, 8)
-  const index = (parseInt(hex, 16) >>> 0) % PROJECT_COLORS.length
+  const hex = id.replaceAll("-", "").slice(0, 8)
+  const index = (Number.parseInt(hex, 16) >>> 0) % PROJECT_COLORS.length
   return PROJECT_COLORS[index] ?? PROJECT_COLORS[0]
 }
