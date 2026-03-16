@@ -1,0 +1,7 @@
+{
+  "extends": "@tractorbeam/typescript-config/node22",
+  "include": ["vite.config.ts", "eslint.config.ts", "prettier.config.js", "drizzle.config.ts"],
+  "compilerOptions": {
+    "noEmit": true
+  }
+}

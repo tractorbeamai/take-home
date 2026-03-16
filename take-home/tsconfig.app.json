@@ -1,0 +1,11 @@
+{
+  "extends": "@tractorbeam/typescript-config/react",
+  "include": ["src"],
+  "compilerOptions": {
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
