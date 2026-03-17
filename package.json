@@ -1,6 +1,7 @@
 {
   "name": "tractorbeam-take-home",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -43,6 +44,7 @@
     "zod-validation-error": "^5.0.0"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "@eslint/compat": "^2.0.3",
     "@tanstack/devtools-vite": "^0.6.0",
     "@testing-library/dom": "^10.4.1",

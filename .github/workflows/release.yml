@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - id: changesets
+        uses: changesets/action@v1
+        with:
+          title: "Version Packages"
+          commit: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - if: steps.changesets.outputs.published == 'true'
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          zip -r "take-home-v${VERSION}.zip" . \
+            -x "node_modules/*" \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x ".changeset/*" \
+            -x "_interviews/*" \
+            -x "CHANGELOG.md" \
+            -x "package-lock.json" \
+            -x "sqlite.db" \
+            -x ".env" \
+            -x ".nitro/*" \
+            -x ".tanstack/*" \
+            -x ".output/*" \
+            -x ".vinxi/*" \
+            -x "dist/*" \
+            -x "dist-ssr/*"
+
+      - if: steps.changesets.outputs.published == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          gh release create "v${VERSION}" "take-home-v${VERSION}.zip" \
+            --title "Take-Home Exercise v${VERSION}" \
+            --notes "See CHANGELOG.md in the repo for details."
