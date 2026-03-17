@@ -19,10 +19,19 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Tractorbeam",
+        title: "Tractorbeam Take-Home",
+      },
+      {
+        name: "description",
+        content: "Tractorbeam take-home exercise",
       },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
+      },
       {
         rel: "stylesheet",
         href: appCss,
