@@ -32,13 +32,16 @@ jobs:
         with:
           title: "chore: version packages"
           commit: "chore: version packages"
-          publish: echo "published"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - if: steps.changesets.outputs.published == 'true'
+      - if: steps.changesets.outputs.hasChangesets == 'false'
         run: |
           VERSION=$(node -p "require('./package.json').version")
+          if gh release view "v${VERSION}" &>/dev/null; then
+            echo "Release v${VERSION} already exists, skipping."
+            exit 0
+          fi
           FILENAME="Tractorbeam Take-Home v${VERSION}.zip"
           zip -r "${FILENAME}" . \
             -x "node_modules/*" \
@@ -56,13 +59,8 @@ jobs:
             -x ".vinxi/*" \
             -x "dist/*" \
             -x "dist-ssr/*"
-
-      - if: steps.changesets.outputs.published == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          VERSION=$(node -p "require('./package.json').version")
-          FILENAME="Tractorbeam Take-Home v${VERSION}.zip"
           gh release create "v${VERSION}" "${FILENAME}" \
             --title "Tractorbeam Take-Home v${VERSION}" \
             --notes "See CHANGELOG.md in the repo for details."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
