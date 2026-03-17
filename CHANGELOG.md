@@ -1,4 +1,4 @@
-# tractorbeam-take-home
+# @tractorbeam/take-home
 
 ## 1.1.0
 

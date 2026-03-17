@@ -1,5 +1,5 @@
 {
-  "name": "tractorbeam-take-home",
+  "name": "@tractorbeam/take-home",
   "private": true,
   "version": "1.1.0",
   "type": "module",
