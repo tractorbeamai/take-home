@@ -50,15 +50,14 @@ Don't add new features to the app. Don't refactor code for its own sake. Focus o
 ### Prerequisites
 
 - Node.js 20+
-- A package manager of your choice (pnpm, npm, yarn, bun)
 
 ### Install and run
 
 ```bash
-pnpm install
-pnpm db:push    # set up local SQLite database
-pnpm db:seed    # seed with sample data
-pnpm dev        # start the dev server
+npm install
+npm run db:push    # set up local SQLite database
+npm run db:seed    # seed with sample data
+npm run dev        # start the dev server
 ```
 
 ## Submission

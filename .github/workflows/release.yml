@@ -30,8 +30,9 @@ jobs:
       - id: changesets
         uses: changesets/action@v1
         with:
-          title: "Version Packages"
+          title: "chore: version packages"
           commit: "chore: version packages"
+          publish: echo "published"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
