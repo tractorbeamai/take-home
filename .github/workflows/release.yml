@@ -42,25 +42,8 @@ jobs:
             echo "Release v${VERSION} already exists, skipping."
             exit 0
           fi
-          FILENAME="Tractorbeam Take-Home v${VERSION}.zip"
-          zip -r "${FILENAME}" . \
-            -x "node_modules/*" \
-            -x ".git/*" \
-            -x ".github/*" \
-            -x ".changeset/*" \
-            -x "_interviews/*" \
-            -x "CHANGELOG.md" \
-            -x "package-lock.json" \
-            -x "sqlite.db" \
-            -x ".env" \
-            -x ".nitro/*" \
-            -x ".tanstack/*" \
-            -x ".output/*" \
-            -x ".vinxi/*" \
-            -x "dist/*" \
-            -x "dist-ssr/*"
-          gh release create "v${VERSION}" "${FILENAME}" \
-            --title "Tractorbeam Take-Home v${VERSION}" \
-            --notes "See CHANGELOG.md in the repo for details."
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --notes "See CHANGELOG.md for details."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
