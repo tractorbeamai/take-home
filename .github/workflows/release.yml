@@ -38,7 +38,8 @@ jobs:
       - if: steps.changesets.outputs.published == 'true'
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          zip -r "take-home-v${VERSION}.zip" . \
+          FILENAME="Tractorbeam Take-Home v${VERSION}.zip"
+          zip -r "${FILENAME}" . \
             -x "node_modules/*" \
             -x ".git/*" \
             -x ".github/*" \
@@ -60,6 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(node -p "require('./package.json').version")
-          gh release create "v${VERSION}" "take-home-v${VERSION}.zip" \
-            --title "Take-Home Exercise v${VERSION}" \
+          FILENAME="Tractorbeam Take-Home v${VERSION}.zip"
+          gh release create "v${VERSION}" "${FILENAME}" \
+            --title "Tractorbeam Take-Home v${VERSION}" \
             --notes "See CHANGELOG.md in the repo for details."
