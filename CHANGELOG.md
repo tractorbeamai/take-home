@@ -1,5 +1,11 @@
 # @tractorbeam/take-home
 
+## 1.1.1
+
+### Patch Changes
+
+- 58ff934: Fix README setup instructions to use npm instead of pnpm.
+
 ## 1.1.0
 
 ### Minor Changes
